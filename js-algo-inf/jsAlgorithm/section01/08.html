@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        function findDwarf(arr){
+            //7개 인자 합이 100다.
+            let result;
+            let firstResult= arr.reduce((plusResult, num)=>{return plusResult + num},0)
+            if(firstResult !== 100){
+                let leftResult = firstResult - 100
+                let minusResult= wrongDwarf(arr,leftResult)
+               result = arr.filter((val)=>{
+                   if(val !== minusResult[0] && val !== minusResult[1]){
+                       return val
+                   }
+                });
+            } 
+            return result;
+        }
+
+        function wrongDwarf(arr, hap){
+            let result= [];
+            for(let i=0; i< arr.length; i++){
+                    for(let j=0; j<arr.length;j++){
+                        if(arr[j]+arr[i] ===hap){
+                            if(i !==j){
+                                result.push(arr[i]);
+                                result.push(arr[j]);
+                                return result
+                            }
+                        }
+                    }
+                }
+        }
+        let height = [20,7,23,19,10,15,25,8,13]
+        console.log(findDwarf(height));
+    </script>
+</body>
+</html>

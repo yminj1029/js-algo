@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function printNum(s){
+            let result;
+            let mid= Math.floor(s.length/2) //내림. 
+            if(s.length%2 ==1) result = s.substring(mid, mid+1); //substring : mid인덱스부터 mid+1전까지
+            if(s.length%2 ==0) result = s.substr(mid-1, 2) //mid-1부터 2개를 뽑아와라
+            return result
+        }
+        let word = "good"
+        console.log(printNum(word));
+    </script>
+</body>
+</html>

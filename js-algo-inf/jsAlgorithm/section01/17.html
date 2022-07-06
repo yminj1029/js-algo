@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function removeWord(n,list){
+            let result=[];
+            for(let i =0; i<list.length; i++){
+                // console.log(list[i], i , list.indexOf(list[i]));
+                if(i === list.indexOf(list[i])){
+                    console.log(list[i]);
+                    result.push(list[i])
+                }
+            }
+            return result
+        }
+
+        function solution(s){
+            let answer;
+            answer= s.filter(function(v,i){
+              return s.indexOf(v)===i;
+            });
+            return answer
+        }
+        let munja = ["good", "time", "good", "time", "student"]
+        console.log(removeWord(5,munja));
+        console.log(solution(munja));
+
+    </script>
+</body>
+</html>

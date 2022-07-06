@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sumOdd(arr){
+            let result=0;
+            for(i=0; i<arr.length; i++){
+                if(arr[i]%2 !==0){
+                    result = result +arr[i]
+                }
+            }
+            return result
+        }
+        function findSmallOdd(arr){
+            let minOdd = Number.MAX_SAFE_INTEGER;
+            for(i=0; i<arr.length; i++){
+                if(arr[i]%2 !==0){
+                   minOdd= minOdd >arr[i]? arr[i]:minOdd
+                }
+            }
+            return minOdd
+        }
+        let arr = [12,77,38,41,53,92,85]
+        console.log(sumOdd(arr));
+        console.log(findSmallOdd(arr));
+    </script>
+</body>
+</html>

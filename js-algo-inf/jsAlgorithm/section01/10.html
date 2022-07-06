@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function findWordNum(words, word){
+            let result = 0;
+            for(let i = 0; i<words.length; i++){
+                if(words[i]===word){
+                    result++;
+                }
+            }
+            return result;
+        }
+
+        function solution(s,t){
+            let answer = 0;
+            for(let x of s){
+                if(x===t) answer++;
+            }
+            return answer
+        }
+
+        function solution2(s,t){
+            let answer = s.split(t).length-1; //split 구분자. 구분해서 하나 뺀다.
+            return answer;
+        }
+
+        let munja = "COMPUTERPROGRAMMING"
+        console.log(findWordNum(munja, 'R'));
+        console.log(solution(munja, 'R'));
+        console.log(solution2(munja, 'R'));
+    </script>
+</body>
+</html>

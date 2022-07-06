@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function changeBig(s){
+            let result = "";
+            for(x of s) result += x.toUpperCase();
+            
+            // if(x === x.toLowerCase()) answer += x.toUpperCase();
+            // else answer+=x;
+            
+            // let num = x.charCodeAt();
+            // if(num >= 97 && num<=122) answer += String.fromCharCode(num-32);
+            // else answer += x;
+            
+            return result
+
+        }
+        let munja = "ItisTimeToStudy";
+        console.log(changeBig(munja));
+    </script>
+</body>
+</html>

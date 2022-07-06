@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function gameResult(num, a, b){
+            let result=[];
+            let winner;
+            for(let i = 0; i<num; i++){
+                if(a[i]===b[i]){
+                    winner = 'D'
+                }else if(a[i]===1){
+                    winner=b[i]=== 2? 'B':'A'
+                }else if(a[i]===2){
+                    winner=b[i]=== 3? 'B':'A'
+                }else if(a[i]===3){
+                    winner=b[i]=== 1? 'B':'A'
+                }
+                result.push(winner)
+            }
+            return result;
+        }
+
+        function solution(a,b){
+            let answer="";
+            for(let i =0; i<a.length; i++){
+                if(a[i]===b[i]) answer+='D'+' ';
+                else if(a[i]===1 &&b[i]===3) answer+='A'+' ';
+                else if(a[i]===2 &&b[i]===1) answer+='A'+' ';
+                else if(a[i]===3 &&b[i]===2) answer+='A'+' ';
+                else answer+='B'+' ';
+
+            }
+            return answer;
+        }
+
+        let number = 5;
+        let aResult = [2,3,3,1,3];
+        let bResult = [1,1,2,2,3];
+
+        console.log(gameResult(number, aResult, bResult));
+
+        console.log(solution(aResult, bResult));
+    </script>
+</body>
+</html>

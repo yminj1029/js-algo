@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function solutionMin(arr){
+            let answer = Math.min(...arr); //스프레드 연산자 인자로 풀어준다.
+            return answer;
+        }
+        function solutionMax(arr){
+            let answer = Math.max(...arr); //스프레드 연산자 인자로 풀어준다.
+            return answer;
+        }
+        let inputArr = [5,3,7,11,2,15,17]
+        console.log(solutionMin(inputArr));
+        console.log(solutionMax(inputArr));
+
+        //스프레드 연산자 대신 apply도 사용 가능하다. ex. Math.min.apply(null,arr);
+    </script>
+</body>
+</html>

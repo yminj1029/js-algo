@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function removeItem(s){
+            let result ="";
+            //console.log(s.indexOf("k")); //indexOf는 문자가 몇번 인덱스에 잇는지 알려준다.
+            for(let i = 0; i <s.length; i++){
+                console.log(s[i], i, s.indexOf(s[i])); //본래 인덱스 위치와 인덱스오브가 일치할때
+                if(i === s.indexOf(s[i])){
+                    result += s[i]
+                }
+            }
+            
+            return result
+        }
+        let munja = "ksekSet"
+        console.log(removeItem(munja));
+    </script>
+</body>
+</html>

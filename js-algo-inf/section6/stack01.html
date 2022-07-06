@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    자바스크립트 스택은 결국 배열이다!
+    여는 괄호는 스택에 무조건 push, 닫는 괄호면 pop! 
+    스택에 남아 있다면 올바르지 않는 괄호, 없다면 올바른 괄호
+    닫는 괄호가 하나 더 있다면? -> 잘못된 괄호
+
+    <script>
+        function solution(s){
+            let answer = "YES";
+            let stack = [];
+            for(let x of s){
+                if(x ==="(") stack.push(x);
+                else {
+                    if(stack.length ===0) return "NO"; 
+                    stack.pop();
+                }
+            }
+            if(stack.length>0) return "NO";
+
+            return answer;
+        }
+
+        let a="(()(()))(()";
+
+        console.log(solution(a));
+    </script>
+</body>
+</html>

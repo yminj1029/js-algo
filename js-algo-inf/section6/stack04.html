@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  1. 숫자에 다 담는다.
+  2. 먼저 나온걸 rt, 나중을 lt로 한다.
+  3. 연산자를 만나는 순간 두개를 pop으로 해서 연산을 한다.
+  4. 연산한 결과를 다시 푸쉬한다.
+
+    <script>
+        function solution(s){  
+            let answer;
+            stack = [];
+            for(let x of s){
+                if(!isNaN(x)){
+                    stack.push(Number(x))
+                }else{
+                    let rt = stack.pop()
+                    let lt = stack.pop()
+                    if(x ==="+"){
+                        stack.push(lt+rt)
+                    }else if(x==="-"){
+                        stack.push(lt-rt)
+                    }else if(x==="*"){
+                        stack.push(lt*rt)
+                    }else if(x==="/"){
+                        stack.push(lt/rt);
+                    }
+                }
+            }
+            answer = stack[0];
+
+            return answer;
+        }
+
+        let str="352+*9-";
+        console.log(solution(str));
+    </script>
+</body>
+</html>
