@@ -7,22 +7,20 @@
     <title>Document</title>
 </head>
 <body>
-    1. 필수과목인데 안빠져나감
+    1. 필수과목인데 순서가 다름
     2. queue안에 남아있음 
     ->return no
     <script>
         function solution(need, plan){
             let answer="YES";
-            let queue = need.split('');
-            for(let x of plan){
-                //1. x가 있는지 필수과목인지
+            let queue = need.split('')
+            for (let x of plan) {
                 if(queue.includes(x)){
                     if(x!==queue.shift()) return "NO";
                 }
             }
-            //2. 필수 과목이 없을 경우
+
             if(queue.length>0) return "NO";
-            console.log(queue, plan);
             return answer;
         }
 
