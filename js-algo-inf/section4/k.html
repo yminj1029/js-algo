@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    중복제거 : Set
+    <script>
+        function solution(n, k, card){
+            let answer=0;
+            let tmp = [];
+            for (let i = 0; i < card.length; i++) {
+                for (let j = 0; j < card.length; j++) {
+                    for (let k = 0; k < card.length; k++) {
+                        if(arr[i]!==arr[j]&& arr[i]!== arr[k]&&arr[j]!==arr[k]){
+                            tmp.push(arr[i]+arr[j]+arr[k])
+
+                        }
+                    }
+                }
+            }
+            tmp.sort((a,b)=>{
+                return b-a
+            })
+
+            let tmpSet = new Set(tmp)
+            
+            answer = [...tmpSet][k-1]
+            return answer;
+        }
+        
+        let arr=[13, 15, 34, 23, 45, 65, 33, 11, 26, 42];
+        console.log(solution(10, 3, arr));
+    </script>
+</body>
+</html>
